@@ -1,0 +1,1 @@
+# spring_email_thymelaf_example
