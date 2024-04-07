@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Email Küldési Űrlap</title>
+</head>
+<body>
+<h2>Email Küldés</h2>
+<form action="#" th:action="@{/sendEmail}" th:object="${email}" method="post">
+    <div>
+        <label for="emailSubject">Email tárgy:</label>
+        <input type="text" id="emailSubject" th:field="*{emailSubject}" />
+    </div>
+    <div>
+        <label for="emailText">Email Szöveg:</label>
+        <textarea type="text" id="emailText" th:field="*{emailText}"></textarea>
+    </div>
+    <div>
+        <label for="receiverEmail">Címzett Email:</label>
+        <input id="receiverEmail" th:field="*{receiverEmail}" type="email">
+    </div>
+    <div>
+        <button type="submit" name="action" value="sendSimple">Küldés SimpleEmailService-szel</button>
+        <button type="submit" name="action" value="sendThymeleaf">Küldés ThymeleafEmailService-szel</button>
+    </div>
+</form>
+</body>
+</html>
